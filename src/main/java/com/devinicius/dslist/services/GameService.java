@@ -6,6 +6,7 @@ import com.devinicius.dslist.entities.Game;
 import com.devinicius.dslist.repositories.GameRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import projections.GameMinProjection;
 
 import java.util.List;
 import java.util.Optional;
@@ -25,7 +26,6 @@ public class GameService {
         Game result = gameRepository.findById(id).get();
         return new GameDTO(result);
         */
-
         Optional<Game> game = gameRepository.findById(id);
         return game.map(GameDTO::new).orElse(null);
     }
@@ -33,5 +33,10 @@ public class GameService {
     public List<GameMinDTO> findAll(){
        List<Game> result = gameRepository.findAll();
        return result.stream().map(GameMinDTO::new).toList();
+    }
+    @Transactional(readOnly = true)
+    public List<GameMinDTO> findByList(Long listId) {
+        List<GameMinProjection> result = gameRepository.searchByList(listId);
+        return result.stream().map(GameMinDTO::new).toList();
     }
 }
