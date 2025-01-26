@@ -6,7 +6,7 @@ import com.devinicius.dslist.entities.Game;
 import com.devinicius.dslist.repositories.GameRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import projections.GameMinProjection;
+import com.devinicius.dslist.projections.GameMinProjection;
 
 import java.util.List;
 import java.util.Optional;

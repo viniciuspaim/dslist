@@ -1,7 +1,7 @@
 package com.devinicius.dslist.DTO;
 
 import com.devinicius.dslist.entities.Game;
-import projections.GameMinProjection;
+import com.devinicius.dslist.projections.GameMinProjection;
 
 public class GameMinDTO {
 
@@ -26,7 +26,7 @@ public class GameMinDTO {
     public GameMinDTO(GameMinProjection projection) {
         id = projection.getId();
         title = projection.getTitle();
-        year = projection.getYear();
+        year = projection.getGameYear();
         imgUrl = projection.getImgUrl();
         shortDescription = projection.getShortDescription();
     }
