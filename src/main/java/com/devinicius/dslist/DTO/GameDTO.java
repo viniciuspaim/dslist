@@ -1,6 +1,7 @@
 package com.devinicius.dslist.DTO;
 
 import com.devinicius.dslist.entities.Game;
+import org.springframework.beans.BeanUtils;
 
 public class GameDTO {
 
@@ -14,20 +15,8 @@ public class GameDTO {
     private String shortDescription;
     private String longDescription;
 
-    public GameDTO() {
-
-    }
-
     public GameDTO(Game entity) {
-        this.id = entity.getId();
-        this.title = entity.getTitle();
-        this.year = entity.getYear();
-        this.genre = entity.getGenre();
-        this.platforms = entity.getPlatforms();
-        this.score = entity.getScore();
-        this.imgUrl = entity.getImgUrl();
-        this.shortDescription = entity.getShortDescription();
-        this.longDescription = entity.getLongDescription();
+        BeanUtils.copyProperties(entity, this);
     }
 
     public Long getId() {
