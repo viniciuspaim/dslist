@@ -1,13 +1,11 @@
-FROM ubuntu:latest AS build
+FROM maven:3.9.9-amazoncorretto-23 AS build
 
-RUN apt-get update
-RUN apt-get install amazoncorretto-23-jdk -y
 COPY . .
 
 RUN apt-get install maven -y
 RUN mvn clean install
 
-FROM amazoncorretto:23-jdk
+FROM amazoncorretto:23-alpine-jdk
 
 EXPOSE 8080
 
