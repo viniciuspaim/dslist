@@ -2,7 +2,6 @@ FROM maven:3.9.9-amazoncorretto-23 AS build
 
 COPY . .
 
-RUN apt-get install maven -y
 RUN mvn clean install
 
 FROM amazoncorretto:23-alpine-jdk
