@@ -5,13 +5,11 @@ import com.devinicius.dslist.DTO.GameMinDTO;
 import com.devinicius.dslist.entities.Game;
 import com.devinicius.dslist.projections.GameMinProjection;
 import com.devinicius.dslist.repositories.GameRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class GameService {

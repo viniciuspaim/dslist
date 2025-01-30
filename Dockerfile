@@ -1,16 +1,16 @@
 FROM ubuntu:latest AS build
 
 RUN apt-get update
-RUN apt-get install openjdk-21-jdk -y
+RUN apt-get install openjdk-23-jdk -y
 COPY src .
 
 RUN apt-get install maven -y
 RUN mvn clean install
 
-FROM openjdk:21-jdk-slim
+FROM openjdk:23-jdk-slim
 
 EXPOSE 8080
 
-COPY --from=build /out/artifacts/dslist_jar/dslist.jar app.jar
+COPY --from=build /target
 
 ENTRYPOINT ["java", "-jar", "app.jar"]
