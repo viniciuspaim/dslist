@@ -7,7 +7,7 @@ COPY . .
 RUN apt-get install maven -y
 RUN mvn clean install
 
-FROM amazoncorretto:23-jdk-slim
+FROM amazoncorretto:23-jdk
 
 EXPOSE 8080
 
