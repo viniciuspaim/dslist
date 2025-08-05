@@ -2,7 +2,7 @@
 
 ## 🚧 Status
 
-Este projeto está em andamento e será atualizado até o final do intensivo no dia **26/01/2025**.
+**Finalizado**.
 ![img.png](img.png)
 ![image](https://github.com/user-attachments/assets/cb7a967c-81b2-4c36-a562-9db48a850767)
 
